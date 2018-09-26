@@ -5,7 +5,7 @@ A Python based Bitcoin price alerter after Silicon Valley's Gilfoyle.
 " target="_blank"><img src="http://img.youtube.com/vi/uS1KcjkWdoU/0.jpg" 
 alt="Gilfoyle's " width="240" height="180" border="10" /></a>
 
-Song: You Suffer by Napalm Death (https://www.youtube.com/watch?v=ybGOT4d2Hs8)
+Song: You Suffer by Napalm Death (https://www.youtube.com/watch?v=ybGOT4d2Hs8).
 
 ## Prerequisites
 * Windows, Mac OS X
@@ -22,15 +22,15 @@ Song: You Suffer by Napalm Death (https://www.youtube.com/watch?v=ybGOT4d2Hs8)
 * ffmpeg
 
 ## Installation
-Download or clone gilfoyle-bitcoin-alert.py to your favorite location.
+Download `main.py` or clone the repository to your favorite location.
 ```
 git clone https://github.com/arnl/gilfoyle-bitcoin-alert
 ```
 
 ## Usage
-Run gilfoyle-bitcoin-alert.py.
+Run `main.py`.
 ```
-python gilfoyle-bitcoin-alert.py
+python main.py
 ```
 
 ## Support
