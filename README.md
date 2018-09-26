@@ -22,10 +22,16 @@ Song: You Suffer by Napalm Death (https://www.youtube.com/watch?v=ybGOT4d2Hs8)
 * ffmpeg
 
 ## Installation
-1. Download or clone gilfoyle-bitcoin-alert.py to your favorite location.
+Download or clone gilfoyle-bitcoin-alert.py to your favorite location.
+```
+git clone https://github.com/arnl/gilfoyle-bitcoin-alert
+```
 
 ## Usage
 Run gilfoyle-bitcoin-alert.py.
+```
+python gilfoyle-bitcoin-alert.py
+```
 
 ## Support
 Use the issues tab for support.
