@@ -111,11 +111,14 @@ class bitcoin():
         self.bitstamp_http = urllib3.PoolManager()
 
     def get_price(self):
-        bitstamp_request = self.bitstamp_http.request('GET', self.json_url)
-        bitstamp_response = bitstamp_request.data.decode('utf8')
-        json_dump = json.loads(bitstamp_response)
-        bitstamp_request.release_conn()
-        return(float(json_dump['last']))
+        try:
+            bitstamp_request = self.bitstamp_http.request('GET', self.json_url, timeout=4.0)
+            bitstamp_response = bitstamp_request.data.decode('utf8')
+            json_dump = json.loads(bitstamp_response)
+            bitstamp_request.release_conn()
+            return(float(json_dump['last']))
+        except:
+            return(float(-9999))
 
 def price_watcher(bitcoin_obj, alert_obj, price_limit, su2):
     price_above = True
@@ -131,7 +134,10 @@ def price_watcher(bitcoin_obj, alert_obj, price_limit, su2):
             price = bitcoin_obj.get_price()
             print('Current price: {}'.format(price), end='\r')
 
-            if price_above and price < price_limit:
+            # Check fist for request timeout
+            if price == -9999:
+                pass
+            elif price_above and price < price_limit:
                 alert_obj.alert()
                 price_above = False
             elif not price_above and price >= price_limit:
